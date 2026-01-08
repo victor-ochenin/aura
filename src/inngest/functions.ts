@@ -47,3 +47,13 @@ export const demoGenerate = inngest.createFunction(
     return generated;
   }
 );
+
+export const demoError = inngest.createFunction(
+  { id: "demo-error" },
+  { event: "demo/error" },
+  async ({ step }) => {
+    await step.run("fail", async () => {
+      throw new Error("Inngest error: Background job failed!");
+    });
+  }
+);
