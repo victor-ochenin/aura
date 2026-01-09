@@ -19,7 +19,7 @@ interface ProjectCommandDialogProps {
     onOpenChange: (open: boolean) => void;
 }
 
-const getProjetIcon = (project: Doc<"projects">) => {
+const getProjectIcon = (project: Doc<"projects">) => {
     if (project.importStatus === "completed") {
         return <FaGithub className="size-4 text-muted-foreground"/>
     }
@@ -64,7 +64,7 @@ export const ProjectCommandDialog = ({
                         value={`${project.name}-${project._id}`}
                         onSelect={() => handleSelect(project._id)}
                         >
-                        {getProjetIcon(project)}
+                        {getProjectIcon(project)}
                         {project.name}
                         </CommandItem>
                     ))}
