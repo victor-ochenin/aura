@@ -1,8 +1,12 @@
+import path from "path";
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+    turbopack: {
+    root: path.resolve(__dirname),
+  },
 };
 
 export default withSentryConfig(nextConfig, {
